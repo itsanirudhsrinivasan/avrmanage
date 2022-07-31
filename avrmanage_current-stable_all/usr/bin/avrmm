@@ -8,4 +8,8 @@ echo "What is your avrdude chip id?: "
 read chip_id
 echo "What is your filename without extension?: "
 read file
-echo -e "freq = $freq\nchip = $chip\nchip-id = $chip_id\nfile = $file\ninclude /etc/avr/avr.mk" > Makefile
+echo -n "Enter dependency 1: "
+read dependency1
+echo -n "Enter dependency 2: "
+read dependency2
+echo -e "freq = $freq\nchip = $chip\nchip-id = $chip_id\nfile = $file\ndependency1 = $dependency1\ndependency2 = $dependency2\ninclude /etc/avr/avr.mk" > Makefile
