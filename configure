@@ -22,7 +22,6 @@ else
 fi
 echo -e "\e[1;32mTest passed.\e[0m"
 echo -e "\e[1;32mCreating config file for dpkg...\e[0m"
-echo -e "Package: avrmanage\nVersion: 1.0\nArchitecture: $arch\nMaintainer: Anirudh Srinivasan <itsanirudhsrinivasan@gmail.com>\nDescription: Simplify avr programming" > avrmanage_current-stable_all/DEBIAN/control
+echo -e "Package: avrmanage\nVersion: 1.0\nArchitecture: $arch\nMaintainer: Anirudh Srinivasan\nDescription: Simplify avr programming" > avrmanage_current-stable_all/DEBIAN/control
 dpkg-deb --build avrmanage_current-stable_all/
 echo -e "Run dpkg -i avrmanage_current-stable_all.deb as superuser"
-
