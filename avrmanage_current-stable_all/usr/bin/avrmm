@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+touch Makefile
+echo "What is your desired frequency?: "
+read freq
+echo "What is your chip name?: "
+read chip
+echo "What is your avrdude chip id?: "
+read chip_id
+echo "What is your filename without extension?: "
+read file
+echo -e "freq = $freq\nchip = $chip\nchip-id = $chip_id\nfile = $file\ninclude /etc/avr/avr.mk" > Makefile
