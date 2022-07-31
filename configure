@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+arch=$1
+dpkg-query -W avrdude &> /dev/null
+if [ $? == 0 ]; then
+	echo -e "\e[1;36mChecking for avrdude... \e[0m\e[1;32mYES\e[0m"
+else
+	echo -e "\e[1;36mChecking for avrdude... \e[0m\e[1;31mNO\e[0m"
+	exit 1;
+fi
+dpkg-query -W gcc-avr &> /dev/null
+if [ $? == 0 ]; then
+	echo -e "\e[1;36mChecking for gcc-avr... \e[0m\e[1;32mYES\e[0m"
+else
+	echo -e "\e[1;36mChecking for gcc-avr... \e[0m\e[1;31mNO\e[0m"
+	exit 1
+fi
+dpkg-query -W avr-libc &> /dev/null
+if [ $? == 0 ]; then
+	echo -e "\e[1;36mChecking for avr-libc... \e[0m\e[1;32mYES\e[0m"
+else
+	echo -e "\e[1;36mChecking for avr-libc... \e[0m\e[1;31mNO\e[0m"
+fi
+echo -e "\e[1;32mTest passed.\e[0m"
+echo -e "\e[1;32mCreating config file for dpkg...\e[0m"
+echo -e "Package: avrmanage\nVersion: 1.0\nArchitecture: $arch\nMaintainer: Anirudh Srinivasan <itsanirudhsrinivasan@gmail.com>\nDescription: Simplify avr programming" > avrmanage_current-stable_all/DEBIAN/control
+dpkg-deb --build avrmanage_current-stable_all/
+echo -e "Run dpkg -i avrmanage_current-stable_all.deb as superuser"
+
