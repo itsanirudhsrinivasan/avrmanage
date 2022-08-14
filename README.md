@@ -11,11 +11,13 @@ avrC
 -----------------------------------------------
 avrC is a script that checks the status of a avr device
 It is used for checking the signature of the device and the fuses.
+Syntax: avrC [device port]
 
 avrF
 -----------------------------------------------
 avrF is a script that flashes programs to the avr device
 It relies on a Makefile created by avrmm.
+Syntax: avrF [device port]
 
 avrmm
 ------------------------------------------------
