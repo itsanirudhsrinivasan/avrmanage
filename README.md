@@ -32,7 +32,7 @@ if you wish to change the port, visit the avrdude.conf file in the /etc director
 INSTALLATION
 ---------------------------------------------------------------------------------
 For installation, type the following commands:<br />
-chmod 770 configure avrmanage_current_stable_all/usr/bin/*
+chmod 770 configure avrmanage_current_stable_all/usr/bin/*<br />
 ./configure [architecture] <br />
 dpkg -i avrmanage_current-stable_all.deb <br />
 
