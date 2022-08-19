@@ -4,4 +4,4 @@ all: $(file).c
 	avr-gcc -mmcu=atmega328p -o build-$(chip-id)/$(file).elf build-$(chip-id)/$(file).o $(dependency1) $(dependency2)
 	avr-objcopy -O ihex build-$(chip-id)/$(file).elf build-$(chip-id)/avr.hex
 	avr-size --mcu=$(chip) --format=avr -C build-$(chip-id)/$(file).elf
-	avrdude -c $(programmer) -p $(chip-id) -e -U flash:w:build-$(chip-id)/avr.hex
+	avrdude -c $(programmer) -p $(chip-id) -e -U flash:w:build-$(chip-id)/avr.hex -b $(baudrate)
