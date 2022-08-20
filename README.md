@@ -1,34 +1,16 @@
 AVR MANAGE
 ===============================================
-avrmanage is a set of three scripts that simplify the process of managing avr devices.
-avrmanage has a configuration file at /etc/avr/avr.conf that decides the programmer and device of avrmanage.
-avrmanage needs the following packages for its functioning correctly.<br />
+avrmanage has been upgraded so that avrmanage only compiles code, but very efficiently. You just use the avrmm command and you get going!
 • gcc-avr <br />
 • avr-libc <br />
 • avrdude <br />
-
-avrC
------------------------------------------------
-avrC is a script that checks the status of a avr device
-It is used for checking the signature of the device and the fuses.
-Syntax: avrC [device port]
-
-avrF
------------------------------------------------
-avrF is a script that flashes programs to the avr device
-It relies on a Makefile created by avrmm.
-Syntax: avrF [device port]
-
 avrmm
 ------------------------------------------------
-avrmm is a script that creates the makefile for avrF.
-It asks for the frequency, chip name, avrdude chip id, and the file without extension
-If you fill in all of this correctly, avrF will run smoothly without any trouble
+avrmm is a script that creates the makefile for compiling and flashing.
+You need to fill in the parameters it asks for. Or else the makefile will crash!
+After you fill in the parameters it asks for, just run make and watch it work!
 
 --------------------------------------------------------------------------------
-all these scripts have the serial port set in avrdude's configuration file.
-if you wish to change the port, visit the avrdude.conf file in the /etc directory and change the serial_port parameter.
-
 INSTALLATION
 ---------------------------------------------------------------------------------
 For installation, type the following commands:<br />
