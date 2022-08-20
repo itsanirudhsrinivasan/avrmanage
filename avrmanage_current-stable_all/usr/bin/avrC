@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-avrdude -p `cat /etc/avr/avr.conf | sed -n '3p'` -c `cat /etc/avr/avr.conf | sed -n '5p'` -P $1
